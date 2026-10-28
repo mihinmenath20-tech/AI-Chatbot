@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Chatbot</title>
+ 
+  <style>
+    body { font-family: sans-serif; background: #f0f2f5; margin: 0;
+           display: flex; justify-content: center; }
+    .box { width: 100%; max-width: 600px; height: 100vh; display: flex;
+           flex-direction: column; background: white; }
+    .top { display: flex; justify-content: space-between; align-items: center;
+           background: #1a73e8; color: white; padding: 0 16px; }
+    h1 { margin: 0; padding: 16px 0; font-size: 18px; }
+    .top button { background: transparent; border: 1px solid white; color: white;
+                  border-radius: 12px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+    #chat { flex: 1; overflow-y: auto; padding: 16px; }
+    .msg { max-width: 80%; padding: 10px 14px; margin: 8px 0; border-radius: 12px;
+           white-space: pre-wrap; line-height: 1.5; }
+    .user { background: #1a73e8; color: white; margin-left: auto; }
+    .bot  { background: #e8eaed; color: #202124; }
+    .row { display: flex; gap: 8px; padding: 12px; border-top: 1px solid #ddd; }
+    #input { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 20px;
+             font-size: 16px; outline: none; }
+    #send { padding: 0 20px; border: none; background: #1a73e8; color: white;
+            border-radius: 20px; font-size: 16px; cursor: pointer; }
+    #send:disabled { background: #999; }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="top">
+      <h1> Chatbota</h1>
+      <button id="resetKey" type="button">Change API key</button>
+    </div>
+    <div id="chat"></div>
+    <div class="row">
+      <input id="input" placeholder="Type a message..." autocomplete="off">
+      <button id="send">Send</button>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
